@@ -21,6 +21,10 @@ textarea {
   max-height: 560px;
 }
 
+.min-h-530 {
+  min-height: 530px;
+}
+
 .formulario {
   width: 1000%;
 }
@@ -38,6 +42,9 @@ textarea {
   .md\:h-97 {
     height: 97%;
   }
+  .md\:min-h-560 {
+    min-height: 560px;
+  }
 }
 
 /* ---------------------------------- Keyframes ------------------------------- */
@@ -47,11 +54,13 @@ textarea {
 	100%{transform:translateY(0px) rotate(0deg);}
 }
 .trainguloL{
+  top: 120px;
   left: -20px;
   animation: movimientoTriangulos 5s ease-in-out infinite;
 }
 
 .trainguloR{
+  top: 120px;
   right: -40px;
   animation: movimientoTriangulos 5s ease-in-out infinite;
   animation-delay: 1s;

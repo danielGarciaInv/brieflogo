@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brief Página Web | Invirtual</title>
+    <title>Brief Logotipo | Invirtual</title>
     <script src="https://kit.fontawesome.com/4b34137ed7.js"></script>
     <link rel="stylesheet" href="./css/output.css" />
   </head>
@@ -26,7 +26,7 @@
 
   <body class="font-InvFont bg-gray-200 w-screen h-screen">
 
-    <header class="w-screen bg-gray-invirtual fixed">
+    <header class="w-screen bg-gray-invirtual">
       <div
         class="w-11/12 max-w-screen-xl m-auto py-2 flex flex-row text-invirtual-500"
       >
@@ -45,13 +45,13 @@
     </header>
 
     <main
-      class="w-screen max-w-screen-2xl h-full m-auto flex flex-row items-center justify-center relative overflow-hidden"
+      class="w-screen max-w-screen-2xl m-auto flex flex-row items-center justify-center relative overflow-hidden"
     >
       <img class="trainguloL absolute z-0 w-64" src="./img/tianguloL.svg">
       <img class="trainguloR absolute z-0 w-96" src="./img/tianguloR.svg">
       <div
-        class="w-full md:w-10/12 lg:w-4/12 z-20 h-auto md:h-97 max-h-560 px-6 py-4 bg-white shadow-2xl"
-        style="margin-top: 5%;"
+        class="w-full md:w-10/12 lg:w-4/12 z-20 h-auto md:min-h-560 px-6 py-4 bg-white shadow-2xl"
+        style="margin-top: 1%;"
       >
         <div class="contForm w-full h-full overflow-hidden">
           <form method="POST" enctype="multipart/form-data" class="formulario h-full flex flex-row">
@@ -107,7 +107,7 @@
               </div>
             </div>
 
-            <!-- Datos de la empresa -->
+            <!-- Datos de la empresa Pt.1 -->
             <div class="contPaso h-full flex flex-col justify-between">
               <div class="paginaPaso w-full">
                 <div
@@ -116,7 +116,7 @@
                   <h3>Datos de la Empresa</h3>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="nombreEmpresa">Nombre de la Empresa: <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
+                  <label for="nombreEmpresa">Nombre de Comercial: <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
                   <input
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
                     type="text"
@@ -124,6 +124,60 @@
                     id="nombreEmpresa"
                     placeholder="Introducir Nombre"
                   />
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="razonEmpresa">Razón Social: <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
+                  <input
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="razonEmpresa"
+                    id="razonEmpresa"
+                    placeholder="Introducir Razón Social"
+                  />
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="correoEmpresa">Correo Electrónico: <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
+                  <input
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="email"
+                    name="correoEmpresa"
+                    id="correoEmpresa"
+                    placeholder="Introducir Correo"
+                  />
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="telefonoEmpresa">Teléfono: <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
+                  <input
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="tel"
+                    name="telefonoEmpresa"
+                    id="telefonoEmpresa"
+                    placeholder="Introducir Teléfono de Empresa"
+                  />
+                </div>
+              </div>
+
+              <div class="botones flex flex-row text-lg bottom-0">
+                <button
+                  class="btnAnt bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 mr-2 rounded-md"
+                >
+                  Anterior
+                </button>
+                <button
+                  class="btnSig bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 rounded-md"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </div>
+
+            <!-- Datos de la empresa P.2-->
+            <div class="contPaso h-full flex flex-col justify-between">
+              <div class="paginaPaso w-full">
+                <div
+                  class="tituloPaso text-invirtual-500 font-semibold text-2xl"
+                >
+                  <h3>Datos de la Empresa</h3>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
                   <label for="direccionEmpresa">Dirección: <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
@@ -175,16 +229,6 @@
                     placeholder="Introducir Código Postal"
                   />
                 </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="telefonoEmpresa">Teléfono: <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
-                  <input
-                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="tel"
-                    name="telefonoEmpresa"
-                    id="telefonoEmpresa"
-                    placeholder="Introducir Teléfono de Empresa"
-                  />
-                </div>
               </div>
 
               <div class="botones flex flex-row text-lg bottom-0">
@@ -201,60 +245,24 @@
               </div>
             </div>
 
-            <!-- Información para tu página Pt.1 -->
+            <!-- Información para tu Logotipo Pt.1 -->
             <div class="contPaso h-full flex flex-col justify-between">
               <div class="paginaPaso w-full">
                 <div
                   class="tituloPaso text-invirtual-500 font-semibold text-2xl"
                 >
-                  <h3>Información para tu Página</h3>
+                  <h3>Información para tu Logotipo</h3>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="checkDominio"
-                    >¿Cuentas con un Sitio web, dominio o alojamiento? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
-                  </label>
-                  <div class="flex flex-row">
-                    <div class="flex flex-row items-center mr-2">
-                      <input
-                        class="mr-2"
-                        type="radio"
-                        name="checkDominio"
-                        value="Con Dominio"
-                        id="conDominio"
-                      /><label for="conDominio">Si</label>
-                    </div>
-                    <div class="flex flex-row items-center">
-                      <input
-                        class="mr-2"
-                        type="radio"
-                        name="checkDominio"
-                        value="Sin Dominio"
-                        id="sinDominio"
-                      /><label for="sinDominio">No</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="dominioEmpresa">Nombre del Dominio:</label>
-                  <input
-                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="text"
-                    name="dominioEmpresa"
-                    id="dominioEmpresa"
-                    placeholder="Solo si cuentas con uno"
-                  />
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="dominioDeseado"
-                    >¿Qué dominio desearías? <br />
-                    Ejemplo: www.invirtual.mx <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  <label for="historiaEmpresa"
+                    >¿Cuál es la historia de tu negocio o empresa? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
                   </label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
                     type="text"
-                    name="dominioDeseado"
-                    id="dominioDeseado"
-                    placeholder="Coloca mas de una opción, separadas por comas"
+                    name="historiaEmpresa"
+                    id="historiaEmpresa"
+                    placeholder="Escribe la historia de tu Empresa"
                   ></textarea>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
@@ -266,19 +274,31 @@
                     type="text"
                     name="significadoNombre"
                     id="significadoNombre"
-                    placeholder="Significado"
+                    placeholder="Escribe el significado"
                   ></textarea>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="giroEmpresa"
-                    >Describe el giro de tu empresa: <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  <label for="actividadEmpresa"
+                    >¿Qué es lo que hace tu negocio o empresa? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
                   </label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
                     type="text"
-                    name="giroEmpresa"
-                    id="giroEmpresa"
-                    placeholder="Giro de la Empresa"
+                    name="actividadEmpresa"
+                    id="actividadEmpresa"
+                    placeholder="Describe la actividad de tu empresa"
+                  ></textarea>
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="diferenciadorEmpresa"
+                    >¿Cómo te diferencias de tus competidores? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  </label>
+                  <textarea
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="diferenciadorEmpresa"
+                    id="diferenciadorEmpresa"
+                    placeholder="Describe las cualidades de tu empresa"
                   ></textarea>
                 </div>
               </div>
@@ -297,92 +317,42 @@
               </div>
             </div>
 
-            <!-- Información para tu página Pt.2 -->
+            <!-- Información para tu Logotipo Pt.2 -->
             <div class="contPaso h-full flex flex-col justify-between">
               <div class="paginaPaso w-full">
                 <div
                   class="tituloPaso text-invirtual-500 font-semibold text-2xl"
                 >
-                  <h3>Información para tu Página</h3>
+                  <h3>Información para tu Logotipo</h3>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="productosEmpresa"
-                    >¿Qué productos o servicios ofreces? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  <label for="competidoresEmpresa"
+                    >¿Quiénes son tus competidores directos? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
                   </label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
                     type="text"
-                    name="productosEmpresa"
-                    id="productosEmpresa"
-                    placeholder="Escribe tus Productos o Servicios"
+                    name="competidoresEmpresa"
+                    id="competidoresEmpresa"
+                    placeholder="Escribe tu competencia"
                   ></textarea>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="mercadoEmpresa">¿Cuál es tu mercado meta? <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
+                  <label for="objetivoEmpresa">¿Cuál es el objetivo general de la empresa? <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="tel"
-                    name="mercadoEmpresa"
-                    id="mercadoEmpresa"
-                    placeholder="Describe tu Mercado Meta"
+                    name="objetivoEmpresa"
+                    id="objetivoEmpresa"
+                    placeholder="Describe el objetivo de tu Empresa"
                   ></textarea>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="objetivoSitio"
-                    >Objetivo principal del sitio web:
-                  </label>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="objetivoSitio"
-                      value="Informativo"
-                      id="informativo"
-                    /><label for="informativo">Informativo</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="objetivoSitio"
-                      value="Venta por catálogo"
-                      id="venta"
-                    /><label for="venta">Venta por catálogo</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="objetivoSitio"
-                      value="Presencia empresarial"
-                      id="presencia"
-                    /><label for="presencia">Presencia empresarial</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="objetivoSitio"
-                      value="Imagen Institucional"
-                      id="imagen"
-                    /><label for="imagen">Imagen Institucional</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="objetivoSitio"
-                      value="Darse a conocer"
-                      id="conocer"
-                    /><label for="conocer">Darse a conocer</label>
-                  </div>
-                  <label for="otro">Otro:</label>
+                  <label for="mercadoMeta">¿Quién es tu mercado meta y cual su rango de edad? <span class="text-red-500 font-semibold hidden"> * Requerido</span></label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="text"
-                    name="objetivoSitio"
-                    id="otro"
-                    placeholder="Escribe tu Objetivo"
+                    name="mercadoMeta"
+                    id="mercadoMeta"
+                    placeholder="Describe tu mercado meta"
                   ></textarea>
                 </div>
               </div>
@@ -401,298 +371,90 @@
               </div>
             </div>
 
-            <!-- Información para tu página Pt.3 -->
+            <!-- Información para tu Logotipo Pt.3 -->
             <div class="contPaso h-full flex flex-col justify-between">
               <div class="paginaPaso w-full">
                 <div
                   class="tituloPaso text-invirtual-500 font-semibold text-2xl"
                 >
-                  <h3>Información para tu Página</h3>
+                  <h3>Información para tu Logotipo</h3>
                 </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="checkFunciones"
-                    >¿Qué secciones y funciones debe cubrir tu página
-                    web? <span class="text-red-500 font-semibold hidden"> * Escoge al menos uno</span>
+                <div class="campo flex flex-col my-2 text-md hidden" id="pasoLogos">
+                  <label for="checkTipoLogo"
+                    >¿Qué requieres, un Logotipo, Isotipo, Imagotipo o Isologo? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
                   </label>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Inicio"
-                      id="inicio"
-                    /><label for="inicio">Inicio</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Nosotros"
-                      id="nosotros"
-                    /><label for="nosotros">Nosotros</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Historia"
-                      id="historia"
-                    /><label for="historia">Historia</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Servicios y Productos"
-                      id="servicios"
-                    /><label for="servicios">Servicios y Productos</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Paquetes"
-                      id="paquetes"
-                    /><label for="paquetes">Paquetes</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Proyectos"
-                      id="proyectos"
-                    /><label for="proyectos">Proyectos</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Contacto"
-                      id="contacto"
-                    /><label for="contacto">Contácto</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Mapa"
-                      id="mapa"
-                    /><label for="mapa">Mapa</label>
-                  </div>
-                  <div class="flex flex-row items-center">
-                    <input
-                      class="mr-2"
-                      type="checkbox"
-                      name="checkFunciones"
-                      value="Botones a redes sociales"
-                      id="botones"
-                    /><label for="botones">Botones a redes sociales</label>
-                  </div>
-                  <label for="otro">Otra Función:</label>
-                  <input
-                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="text"
-                    name="checkFunciones"
-                    id="otro"
-                    placeholder="Otra función"
-                  />
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="logotipoEmpresa"
-                    >¿Cuentas con logotipo en archivo vectorial o editable?
-                    (.ai, .eps, .psd) <span class="text-red-500 font-semibold hidden"> * Requerido</span>
-                  </label>
-                  <input
-                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="text"
-                    name="logotipoEmpresa"
-                    id="logotipoEmpresa"
-                    placeholder="Si/No, Tipo de archivo"
-                  />
-                </div>
-              </div>
-
-              <div class="botones flex flex-row text-lg bottom-0">
-                <button
-                  class="btnAnt bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 mr-2 rounded-md"
-                >
-                  Anterior
-                </button>
-                <button
-                  class="btnSig bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 rounded-md"
-                >
-                  Siguiente
-                </button>
-              </div>
-            </div>
-
-            <!-- Información para tu página Pt.4 -->
-            <div class="contPaso h-full flex flex-col justify-between">
-              <div class="paginaPaso w-full">
-                <div
-                  class="tituloPaso text-invirtual-500 font-semibold text-2xl"
-                >
-                  <h3>Información para tu Página</h3>
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="conReglasEstilos"
-                    >¿Existe un manual de estilo, esquema de colores,
-                    tipografía, o alguna regla que quisieras que se respetara? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
-                  </label>
-                  <textarea
-                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="text"
-                    name="conReglasEstilos"
-                    id="conReglasEstilos"
-                    placeholder="Si/No, ¿Cuál?"
-                  ></textarea>
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="reglasEstilos"
-                    >Si no hay un estilo definido, mencione que colores,
-                    tipografía o regla le gustaría se respetara:
-                  </label>
-                  <textarea
-                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="text"
-                    name="reglasEstilos"
-                    id="reglasEstilos"
-                    placeholder="Describe colores, tipografía o reglas"
-                  ></textarea>
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="webReferencia"
-                    >Webs de referencia (aquellas que te gusten, si es algo en
-                    particular favor de mencionarlo)
-                  </label>
-                  <textarea
-                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
-                    type="text"
-                    name="webReferencia"
-                    id="webReferencia"
-                    placeholder="Ej. www.invirtualweb.com - Me gusta el fondo"
-                  ></textarea>
-                </div>
-              </div>
-
-              <div class="botones flex flex-row text-lg bottom-0">
-                <button
-                  class="btnAnt bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 mr-2 rounded-md"
-                >
-                  Anterior
-                </button>
-                <button
-                  class="btnSig bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 rounded-md"
-                >
-                  Siguiente
-                </button>
-              </div>
-            </div>
-
-            <!-- Redes Sociales -->
-            <div class="contPaso h-full flex flex-col justify-between">
-              <div class="paginaPaso w-full">
-                <div
-                  class="tituloPaso text-invirtual-500 font-semibold text-2xl"
-                >
-                  <h3>Redes Sociales</h3>
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label
-                    >¿Con qué redes sociales cuenta la empresa? (Agregar link de
-                    sus redes sociales)
-                  </label>
-                </div>
-                <div class="flex flex-col my-2 text-md" id="contCamposRed"></div>
-                <button type="button" id="btnNuevoEnlace" class="text-invirtual-500 hover:bg-gray-200 transition-colors p-2 rounded-md">+ Añadir Enlace</button>
-              </div>
-              <div class="botones flex flex-row text-lg bottom-0">
-                <button
-                  class="btnAnt bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 mr-2 rounded-md"
-                >
-                  Anterior
-                </button>
-                <button
-                  class="btnSig bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 rounded-md"
-                >
-                  Siguiente
-                </button>
-              </div>
-            </div>
-
-            <!-- Estructura de Página -->
-            <div class="contPaso h-full flex flex-col justify-between">
-              <div class="paginaPaso w-full">
-                <div
-                  class="tituloPaso text-invirtual-500 font-semibold text-2xl"
-                >
-                  <h3>Estructura de la Página</h3>
-                </div>
-                <div class="campo flex flex-col my-2 text-md">
-                  <label for="checkEstructura"
-                    >¿Qué tipo de estructura de página web desearías? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
-                  </label>
-                  <div class="flex flex-row flex-wrap">
-                    <div class="colInput w-1/2">
+                  <div class="flex flex-col flex-wrap">
+                    <div class="colInput w-full">
                       <div class="rowInput">
                         <input
                           class="mr-2"
                           type="radio"
-                          name="checkEstructura"
-                          value="Mosaicos"
-                          id="mosaicos"
-                        /><label class="cursor-pointer" for="mosaicos"
-                          >Mosaicos</label
+                          name="checkTipoLogo"
+                          value="Logotipo"
+                          id="logotipo"
+                        /><label class="cursor-pointer" for="logotipo"
+                          >Logotipo</label
                         >
                       </div>
-                      <label class="rowInput cursor-pointer" for="mosaicos">
-                        <img style="width: 76px" src="img/mosaicos.svg" />
+                      <label class="rowInput cursor-pointer" for="logotipo">
+                        <img src="img/logotipo.svg" />
                       </label>
                     </div>
 
-                    <div class="colInput w-1/2">
+                    <div class="colInput w-full">
                       <div class="rowInput">
                         <input
                           class="mr-2"
                           type="radio"
-                          name="checkEstructura"
-                          value="Unipágina"
-                          id="unipagina"
-                        /><label class="cursor-pointer" for="unipagina"
-                          >Unipágina</label
+                          name="checkTipoLogo"
+                          value="Isotipo"
+                          id="isotipo"
+                        /><label class="cursor-pointer" for="isotipo"
+                          >Isotipo</label
                         >
                       </div>
-                      <label class="rowInput cursor-pointer" for="unipagina">
-                        <img style="width: 76px" src="img/unipagina.svg" />
+                      <label class="rowInput cursor-pointer" for="isotipo">
+                        <img src="img/isotipo.svg" />
                       </label>
                     </div>
 
-                    <div class="colInput w-1/2">
+                    <div class="colInput w-full">
                       <div class="rowInput">
                         <input
                           class="mr-2"
                           type="radio"
-                          name="checkEstructura"
-                          value="Varias Secciones"
-                          id="secciones"
-                        /><label class="cursor-pointer" for="secciones"
-                          >Varias Secciones</label
+                          name="checkTipoLogo"
+                          value="Imagotipo"
+                          id="imagotipo"
+                        /><label class="cursor-pointer" for="imagotipo"
+                          >Imagotipo</label
                         >
                       </div>
-                      <label class="rowInput cursor-pointer" for="secciones">
-                        <img style="width: 76px" src="img/variassec.svg" />
+                      <label class="rowInput cursor-pointer" for="imagotipo">
+                        <img src="img/imagotipo.svg" />
+                      </label>
+                    </div>
+
+                    <div class="colInput w-full">
+                      <div class="rowInput">
+                        <input
+                          class="mr-2"
+                          type="radio"
+                          name="checkTipoLogo"
+                          value="Isologo"
+                          id="isologo"
+                        /><label class="cursor-pointer" for="isologo"
+                          >Isologo</label
+                        >
+                      </div>
+                      <label class="rowInput cursor-pointer" for="isologo">
+                        <img src="img/isologo.svg" />
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="botones flex flex-row text-lg bottom-0">
                 <button
                   class="btnAnt bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 mr-2 rounded-md"
@@ -707,51 +469,269 @@
               </div>
             </div>
 
-            <!-- Datos extra -->
+            <!-- Información para tu Logotipo Pt.4 -->
             <div class="contPaso h-full flex flex-col justify-between">
               <div class="paginaPaso w-full">
                 <div
                   class="tituloPaso text-invirtual-500 font-semibold text-2xl"
                 >
-                  <h3>Datos Extra</h3>
+                  <h3>Información para tu Logotipo</h3>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="cuentasEmpresa"
-                    >¿Cuántas cuentas de correo necesitas y cuales serían?
-                    <br />Ejemplo: <br />contacto@tudominio.com
+                  <label for="ideaLogotipo"
+                    >¿Tienes alguna idea de logotipo en mente? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
                   </label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
                     type="text"
-                    name="cuentasEmpresa"
-                    id="cuentasEmpresa"
-                    placeholder="Escriba los correos que necesita"
+                    name="ideaLogotipo"
+                    id="ideaLogotipo"
+                    placeholder="Describe tu idea o menciona el logotipo de la marca que te agrade"
                   ></textarea>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="desTresRenglones"
-                    >Describe tu empresa en 3 renglones:</label
-                  >
+                  <label for="coloresLogotipo"
+                    >¿Qué colores te gustarían para representar tu negocio y por qué? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  </label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
                     type="text"
-                    name="desTresRenglones"
-                    id="desTresRenglones"
-                    placeholder="Describe tu Empresa"
+                    name="coloresLogotipo"
+                    id="coloresLogotipo"
+                    placeholder="Escribe los Colores"
                   ></textarea>
                 </div>
                 <div class="campo flex flex-col my-2 text-md">
-                  <label for="palabrasClave"
-                    >Escribe todas las palabras clave con las cuales tus
-                    clientes podrían encontrar tu página web en los
-                    buscadores:</label
-                  >
+                  <label for="mensajeLogotipo"
+                    >¿Qué te gustaría comunicar con el diseño de tu marca? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  </label>
                   <textarea
                     class="border-b-2 border-invirtual-200 px-2 bg-transparent"
                     type="text"
-                    name="palabrasClave"
-                    id="palabrasClave"
-                    placeholder="Escribe las palabras clave"
+                    name="mensajeLogotipo"
+                    id="mensajeLogotipo"
+                    placeholder="Escribe tu mensaje"
+                  ></textarea>
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="conSlogan"
+                    >¿Deseas reforzar  tu marca con un slogan? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  </label>
+                  <textarea
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="conSlogan"
+                    id="conSlogan"
+                    placeholder="Si/No, ¿Porqué?"
+                  ></textarea>
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="ideaSlogan"
+                    >¿Tienes alguna idea de slogan?
+                  </label>
+                  <textarea
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="ideaSlogan"
+                    id="ideaSlogan"
+                    placeholder="Escribe tu idea"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="botones flex flex-row text-lg bottom-0">
+                <button
+                  class="btnAnt bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 mr-2 rounded-md"
+                >
+                  Anterior
+                </button>
+                <button
+                  class="btnSig bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 rounded-md"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </div>
+
+            <!-- Información para tu Logotipo Pt.5 -->
+            <div class="contPaso h-full flex flex-col justify-between">
+              <div class="paginaPaso w-full">
+                <div
+                  class="tituloPaso text-invirtual-500 font-semibold text-2xl"
+                >
+                  <h3>Información para tu Logotipo</h3>
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="evitarDiseno"
+                    >¿Hay algún elemento que el diseñador deba evitar?
+                  </label>
+                  <textarea
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="evitarDiseno"
+                    id="evitarDiseno"
+                    placeholder="Escribe elementos que no quieres en tu diseño"
+                  ></textarea>
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="evitarColores"
+                    >¿Qué colores debería de evitar dentro de su diseño y por qué?
+                  </label>
+                  <textarea
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="evitarColores"
+                    id="evitarColores"
+                    placeholder="Escribe los Colores que no deseas"
+                  ></textarea>
+                </div>
+              </div>
+              
+              <div class="botones flex flex-row text-lg bottom-0">
+                <button
+                  class="btnAnt bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 mr-2 rounded-md"
+                >
+                  Anterior
+                </button>
+                <button
+                  class="btnSig bg-invirtual-500 hover:bg-invirtual-800 transition-colors font-medium text-gray-200 px-2 py-1 rounded-md"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </div>
+
+            <!-- Papeleria -->
+            <div class="contPaso h-full flex flex-col justify-between">
+              <div class="paginaPaso w-full">
+                <div
+                  class="tituloPaso text-invirtual-500 font-semibold text-2xl"
+                >
+                  <h3>Identidad Corporativa</h3>
+                </div>
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="checkManual"
+                    >¿Necesitas un manual de identidad corporativa con papelería y aplicaciones? <span class="text-red-500 font-semibold hidden"> * Requerido</span>
+                  </label>
+                  <div class="flex flex-row">
+                    <div class="flex flex-row items-center mr-2">
+                      <input
+                        class="mr-2"
+                        type="radio"
+                        name="checkManual"
+                        value="Si"
+                        id="conManual"
+                      /><label for="conManual">Si</label>
+                    </div>
+                    <div class="flex flex-row items-center">
+                      <input
+                        class="mr-2"
+                        type="radio"
+                        name="checkManual"
+                        value="No"
+                        id="sinManual"
+                      /><label for="sinManual">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="papeleriaNecesitada"
+                    >¿Qué papelería vas a necesitar?
+                  </label>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="papeleriaNecesitada"
+                      value="Tarjetas de presentación"
+                      id="tarjetas"
+                    /><label for="tarjetas">Tarjetas de presentación</label>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="papeleriaNecesitada"
+                      value="Hojas membretadas"
+                      id="hojasMembretadas"
+                    /><label for="hojasMembretadas">Hojas membretadas</label>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="papeleriaNecesitada"
+                      value="Folder"
+                      id="folder"
+                    /><label for="folder">Folder</label>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="papeleriaNecesitada"
+                      value="Sobre"
+                      id="sobre"
+                    /><label for="sobre">Sobre</label>
+                  </div>
+                  <label for="otroPap">Otro:</label>
+                  <textarea
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="papeleriaNecesitada"
+                    id="otroPap"
+                    placeholder="Solo si requieres otro"
+                  ></textarea>
+                </div>
+
+                <div class="campo flex flex-col my-2 text-md">
+                  <label for="aplicacionesNecesitadas"
+                    >¿Cuáles son las aplicaciones donde te gustaría visualizar tu marca?
+                  </label>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="aplicacionesNecesitadas"
+                      value="Tazas"
+                      id="tazas"
+                    /><label for="tazas">Tazas</label>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="aplicacionesNecesitadas"
+                      value="Plumas"
+                      id="plumas"
+                    /><label for="plumas">Plumas</label>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="aplicacionesNecesitadas"
+                      value="Playeras"
+                      id="playeras"
+                    /><label for="playeras">Playeras</label>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <input
+                      class="mr-2"
+                      type="checkbox"
+                      name="aplicacionesNecesitadas"
+                      value="Gorras"
+                      id="gorras"
+                    /><label for="gorras">Gorras</label>
+                  </div>
+                  <label for="otroAp">Otro:</label>
+                  <textarea
+                    class="border-b-2 border-invirtual-200 px-2 bg-transparent"
+                    type="text"
+                    name="aplicacionesNecesitadas"
+                    id="otroAp"
+                    placeholder="Solo si requieres otra"
                   ></textarea>
                 </div>
               </div>
@@ -779,7 +759,7 @@
       </div>
     </main>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       const btnNuevoEnlace = document.getElementById('btnNuevoEnlace');
       
       btnNuevoEnlace.addEventListener('click',(e) => {
@@ -809,7 +789,7 @@
         contCamposRed = document.getElementById('contCamposRed');
         contCamposRed.appendChild(nuevoCampoRed);
       }
-      </script>
+      </script> -->
     <script src="./js/briefMain.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-const url = "http://localhost/briefpaginaweb/";
+const url = "http://localhost/brieflogo/";
 
 const movPag = document.getElementById("movPag");
 const btnSig = document.querySelectorAll(".btnSig");
@@ -6,52 +6,94 @@ const btnAnt = document.querySelectorAll(".btnAnt");
 const btnEnviarBrief = document.getElementById("btnEnviarBrief");
 const modalFinal = document.getElementById("modalFinal");
 const btnCerrarModal = document.getElementById("btnCerrarModal");
+const pasoLogos = document.getElementById("pasoLogos");
 var paso = 1;
 
 // ------------------------------------------------------------------- Eventos para los Botones
 for (const btn of btnSig) {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
+    toggleLogos(false);
     switch(paso){
       case 1:
         if(validarPasoUno()){
           desplazarDerecha();
-          
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 2:
         if(validarPasoDos()){
           desplazarDerecha();
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 3:
         if(validarPasoTres()){
           desplazarDerecha();
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 4:
         if(validarPasoCuatro()){
           desplazarDerecha();
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 5:
         if(validarPasoCinco()){
+          toggleLogos(true);
           desplazarDerecha();
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 6:
         if(validarPasoSeis()){
           desplazarDerecha();
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 7:
         if(validarPasoSiete()){
           desplazarDerecha();
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 8:
         if(validarPasoOcho()){
           desplazarDerecha();
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
         }
         break;
       case 9:
@@ -63,101 +105,98 @@ for (const btn of btnSig) {
 for (const btn of btnAnt) {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
+    toggleLogos(false);
+    if(paso == 7){
+      toggleLogos(true);
+    }
     desplazarIzquierda();
   });
 }
 
 btnEnviarBrief.addEventListener('click',(e)=>{
   e.preventDefault();
-  let datos = new FormData();
-  // ---------------------------- Recolección de datos para enviarlos
-  /* Datos de contacto */
-  datos.append('nombreCliente',nombreCliente.value);
-  datos.append('correoCliente',correoCliente.value);
-  datos.append('telefonoCliente',telefonoCliente.value);
-
-  /* Datos de empresa */
-  datos.append('nombreEmpresa',nombreEmpresa.value);
-  datos.append('direccionEmpresa',direccionEmpresa.value);
-  datos.append('municipioEmpresa',municipioEmpresa.value);
-  datos.append('ciudadEmpresa',ciudadEmpresa.value);
-  datos.append('estadoEmpresa',estadoEmpresa.value);
-  datos.append('cpostalEmpresa',cpostalEmpresa.value);
-  datos.append('telefonoEmpresa',telefonoEmpresa.value);
+  if(validarPasoNueve()){
+    let datos = new FormData();
+    // ---------------------------- Recolección de datos para enviarlos
+    /* Datos de contacto */
+    datos.append('nombreCliente',nombreCliente.value);
+    datos.append('correoCliente',correoCliente.value);
+    datos.append('telefonoCliente',telefonoCliente.value);
   
-  /* Info página */
-  checkDominios = document.getElementsByName('checkDominio');
-  for (let checkDominio of checkDominios){
-    if(checkDominio.checked){
-      datos.append('checkDominio',checkDominio.value);
+    /* Datos de empresa */
+    datos.append('nombreEmpresa',nombreEmpresa.value);
+    datos.append('razonEmpresa',razonEmpresa.value);
+    datos.append('correoEmpresa',correoEmpresa.value);
+    datos.append('telefonoEmpresa',telefonoEmpresa.value);
+    datos.append('direccionEmpresa',direccionEmpresa.value);
+    datos.append('municipioEmpresa',municipioEmpresa.value);
+    datos.append('ciudadEmpresa',ciudadEmpresa.value);
+    datos.append('estadoEmpresa',estadoEmpresa.value);
+    datos.append('cpostalEmpresa',cpostalEmpresa.value);
+    
+    /* Info Logotipo */
+    datos.append('historiaEmpresa',historiaEmpresa.value);
+    datos.append('significadoNombre',significadoNombre.value);
+    datos.append('actividadEmpresa',actividadEmpresa.value);
+    datos.append('diferenciadorEmpresa',diferenciadorEmpresa.value);
+    datos.append('competidoresEmpresa',competidoresEmpresa.value);
+    datos.append('objetivoEmpresa',objetivoEmpresa.value);
+    datos.append('mercadoMeta',mercadoMeta.value);
+
+    checksTipoLogo = document.getElementsByName('checkTipoLogo');
+    for (let checkTipoLogo of checksTipoLogo){
+      if(checkTipoLogo.checked){
+        datos.append('checkTipoLogo',checkTipoLogo.value);
+      }
     }
+
+    datos.append('ideaLogotipo',ideaLogotipo.value);
+    datos.append('coloresLogotipo',coloresLogotipo.value);
+    datos.append('mensajeLogotipo',mensajeLogotipo.value);
+    datos.append('conSlogan',conSlogan.value);
+    datos.append('ideaSlogan',ideaSlogan.value);
+    datos.append('evitarDiseno',evitarDiseno.value);
+    datos.append('evitarColores',evitarColores.value);
+
+    /* Papeleria */
+    checksManual = document.getElementsByName('checkManual');
+    for (let checkManual of checksManual){
+      if(checkManual.checked){
+        datos.append('checkManual',checkManual.value);
+      }
+    }
+
+    let papeleriaNecesitadas = document.getElementsByName('papeleriaNecesitada');
+    let papeleriaNecesitada = [];
+    for (let papeleria of papeleriaNecesitadas) {
+      if(papeleria.checked || (papeleria.type == 'textarea' && papeleria.value != '')){
+        papeleriaNecesitada.push(papeleria.value);
+      }
+    }
+    papeleriaNecesitada = JSON.stringify(papeleriaNecesitada);
+    datos.append('papeleriaNecesitada',papeleriaNecesitada);
+
+    let appsNecesitadas = document.getElementsByName('aplicacionesNecesitadas');
+    let aplicacionesNecesitadas = [];
+    for (let aplicacion of appsNecesitadas) {
+      if(aplicacion.checked || (aplicacion.type == 'textarea' && aplicacion.value != '')){
+        aplicacionesNecesitadas.push(aplicacion.value);
+      }
+    }
+    aplicacionesNecesitadas = JSON.stringify(aplicacionesNecesitadas);
+    datos.append('aplicacionesNecesitadas',aplicacionesNecesitadas);
+  
+    fetch(url+'back/procForm.php',{
+      method: 'POST',
+      body: datos
+    }).then(res => res.text()).then((r) => {
+      if(r == 'true'){
+        mostrarModal('Se ha enviado el brief correctamente!', '#2ca02c');
+      }else{
+        mostrarModal('Ha ocurrido un error, favor de intentarlo mas tarde!', '#c83737');
+      }
+    });
   }
-  datos.append('dominioEmpresa',dominioEmpresa.value);
-  datos.append('dominioDeseado',dominioDeseado.value);
-  datos.append('significadoNombre',significadoNombre.value);
-  datos.append('giroEmpresa',giroEmpresa.value);
-  datos.append('productosEmpresa',productosEmpresa.value);
-  datos.append('mercadoEmpresa',mercadoEmpresa.value);
-
-  let objetivosSitio = document.getElementsByName('objetivoSitio');
-  let objetivoSitio = [];
-  for (let objetivo of objetivosSitio) {
-    if(objetivo.checked || (objetivo.type == 'textarea' && objetivo.value != '')){
-      objetivoSitio.push(objetivo.value);
-    }
-  }
-  objetivoSitio = JSON.stringify(objetivoSitio);
-  datos.append('objetivoSitio',objetivoSitio);
-
-  let checksFunciones = document.getElementsByName('checkFunciones');
-  let checkFunciones = [];
-  for (let check of checksFunciones) {
-    if(check.checked || (check.type == 'text' && check.value != '')){
-      checkFunciones.push(check.value);
-    }
-  }
-  checkFunciones = JSON.stringify(checkFunciones);
-  datos.append('checkFunciones',checkFunciones);
-
-  datos.append('logotipoEmpresa',logotipoEmpresa.value);
-  datos.append('conReglasEstilos',conReglasEstilos.value);
-  datos.append('reglasEstilos',reglasEstilos.value);
-  datos.append('webReferencia',webReferencia.value);
-
-  /* Redes sociales */
-  let redesPrev = document.getElementsByName('redes');
-  let redes = [];
-  if(redesPrev.length > 0){
-    for (let red of redesPrev) {
-      redes.push(red.value);
-    }
-  }
-  redes = JSON.stringify(redes);
-  datos.append('redes',redes);
-
-  /* Estructura */
-  checksEstructura = document.getElementsByName('checkEstructura');
-  for (let checkEstructura of checksEstructura){
-    if(checkEstructura.checked){
-      datos.append('checkEstructura',checkEstructura.value);
-    }
-  }
-
-  /* Extra */
-  datos.append('cuentasEmpresa',cuentasEmpresa.value);
-  datos.append('desTresRenglones',desTresRenglones.value);
-  datos.append('palabrasClave',palabrasClave.value);
-
-  fetch(url+'back/procForm.php',{
-    method: 'POST',
-    body: datos
-  }).then(res => res.text()).then((r) => {
-    if(r == 'true'){
-      mostrarModal('Se ha enviado el brief correctamente!', '#2ca02c');
-    }else{
-      mostrarModal('Ha ocurrido un error, favor de intentarlo mas tarde!', '#c83737');
-    }
-  });
 });
 
 btnCerrarModal.addEventListener('click',(e)=>{
@@ -189,6 +228,14 @@ const desplazarIzquierda = () => {
     return;
   }
 }
+
+const toggleLogos = (khe) => {
+  if(khe){
+    pasoLogos.classList.remove('hidden');
+  }else{
+    pasoLogos.classList.add('hidden');
+  }
+}
 // ------------------------------------------------------------------- Funciones para validar Campos
 const validarPasoUno = () => {
   if (validarCampoTexto('nombreCliente') && validarCampoTexto('correoCliente') && validarCampoTexto('telefonoCliente')){
@@ -199,7 +246,7 @@ const validarPasoUno = () => {
 }
 
 const validarPasoDos = () => {
-  if (validarCampoTexto('nombreEmpresa') && validarCampoTexto('direccionEmpresa') && validarCampoTexto('municipioEmpresa') && validarCampoTexto('ciudadEmpresa') && validarCampoTexto('estadoEmpresa') && validarCampoTexto('cpostalEmpresa') && validarCampoTexto('telefonoEmpresa')){
+  if (validarCampoTexto('nombreEmpresa') && validarCampoTexto('razonEmpresa') && validarCampoTexto('correoEmpresa') && validarCampoTexto('telefonoEmpresa')){
     return true;
   }else{
     return false;
@@ -207,7 +254,7 @@ const validarPasoDos = () => {
 }
 
 const validarPasoTres = () => {
-  if (validarCampoRadio('checkDominio') && validarCampoTexto('dominioDeseado') && validarCampoTexto('significadoNombre') && validarCampoTexto('giroEmpresa')){
+  if (validarCampoTexto('direccionEmpresa') && validarCampoTexto('municipioEmpresa') && validarCampoTexto('ciudadEmpresa') && validarCampoTexto('estadoEmpresa') && validarCampoTexto('cpostalEmpresa')){
     return true;
   }else{
     return false;
@@ -215,7 +262,7 @@ const validarPasoTres = () => {
 }
 
 const validarPasoCuatro = () => {
-  if (validarCampoTexto('productosEmpresa') && validarCampoTexto('mercadoEmpresa')){
+  if (validarCampoTexto('historiaEmpresa') && validarCampoTexto('significadoNombre') && validarCampoTexto('actividadEmpresa') && validarCampoTexto('diferenciadorEmpresa')){
     return true;
   }else{
     return false;
@@ -223,7 +270,7 @@ const validarPasoCuatro = () => {
 }
 
 const validarPasoCinco = () => {
-  if (validarCampoRadio('checkFunciones') && validarCampoTexto('logotipoEmpresa')){
+  if (validarCampoTexto('competidoresEmpresa') && validarCampoTexto('objetivoEmpresa') && validarCampoTexto('mercadoMeta')){
     return true;
   }else{
     return false;
@@ -231,7 +278,7 @@ const validarPasoCinco = () => {
 }
 
 const validarPasoSeis = () => {
-  if (validarCampoTexto('conReglasEstilos')){
+  if (validarCampoRadio('checkTipoLogo')){
     return true;
   }else{
     return false;
@@ -239,11 +286,19 @@ const validarPasoSeis = () => {
 }
 
 const validarPasoSiete = () => {
-  return true;
+  if (validarCampoTexto('ideaLogotipo') && validarCampoTexto('coloresLogotipo') && validarCampoTexto('mensajeLogotipo') && validarCampoTexto('conSlogan') && validarCampoTexto('conSlogan')){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 const validarPasoOcho = () => {
-  if (validarCampoRadio('checkEstructura')){
+  return true;
+}
+
+const validarPasoNueve = () => {
+  if (validarCampoRadio('checkManual')){
     return true;
   }else{
     return false;

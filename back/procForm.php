@@ -7,7 +7,7 @@ $mensaje = '<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado Formulario</title>
+    <title>Resultado Formulario - Brief Logotipo</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
         *,
@@ -227,6 +227,30 @@ $mensaje .= '<body class="font-InvFont bg-gray-200 w-screen h-screen">
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Razón de la Empresa: </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['razonEmpresa'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Correo de la Empresa: </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['correoEmpresa'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Teléfono de la Empresa: </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['telefonoEmpresa'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
                     <p>Dirección: </p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
@@ -265,47 +289,23 @@ $mensaje .= '<body class="font-InvFont bg-gray-200 w-screen h-screen">
                     <p>'. $_POST['cpostalEmpresa'] .'</p>
                 </div>
             </div>
-            <div class="datosCampo flex flex-col md:flex-row ">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Teléfono: </p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['telefonoEmpresa'] .'</p>
-                </div>
-            </div>
         </div>
 
         <div class="seccion w-screen">
             <div class="tituloPaso p-2 bg-invirtual-300 text-white font-semibold text-xl">
-                <h3>Información para la Página</h3>
+                <h3>Información para el Logotipo</h3>
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>¿Cuenta con un Sitio web, dominio o alojamiento?</p>
+                    <p>Historia de la Empresa</p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['checkDominio'] .'</p>
+                    <p>'. $_POST['historiaEmpresa'] .'</p>
                 </div>
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Nombre del Dominio: </p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['dominioEmpresa'] .'</p>
-                </div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row ">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>¿Qué dominio desearía? </p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['dominioDeseado'] .'</p>
-                </div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row ">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>¿Tiene algún significado el nombre de la empresa? </p>
+                    <p>Significado del Nombre</p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
                     <p>'. $_POST['significadoNombre'] .'</p>
@@ -313,147 +313,140 @@ $mensaje .= '<body class="font-InvFont bg-gray-200 w-screen h-screen">
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Giro de la empresa: </p>
+                    <p>Actividad de la Empresa</p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['giroEmpresa'] .'</p>
+                    <p>'. $_POST['actividadEmpresa'] .'</p>
                 </div>
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>¿Qué productos o servicios ofrece? </p>
+                    <p>Como se diferencia de los competidores</p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['productosEmpresa'] .'</p>
+                    <p>'. $_POST['diferenciadorEmpresa'] .'</p>
                 </div>
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Mercado Meta: </p>
+                    <p>Competidores Directos </p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['mercadoEmpresa'] .'</p>
+                    <p>'. $_POST['competidoresEmpresa'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Objetivo general de la empresa </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['objetivoEmpresa'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Mercado Meta </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['mercadoMeta'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Tipo de logo que requiere </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['checkTipoLogo'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Idea para el Logotipo </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['ideaLogotipo'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Colores para representar al negocio </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['coloresLogotipo'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Le gustaria comunicar </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['mensajeLogotipo'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>¿Desea reforzar la marca con un slogan? </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['conSlogan'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Idea para el slogan </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['ideaSlogan'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Elementos a evitar para el diseño </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['evitarDiseno'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>Colores a evitar para el diseño </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['evitarColores'] .'</p>
+                </div>
+            </div>
+
+        <div class="seccion w-screen">
+            <div class="tituloPaso p-2 bg-invirtual-300 text-white font-semibold text-xl">
+                <h3>Identidad corporativa</h3>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>¿Se requiere manual de Identidad Corporativa?</p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['checkManual'] .'</p>
                 </div>
             </div>
             <div class="datosCampo flex flex-col md:flex-row">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Objetivo principal del sitio web: </p>
+                    <p>Papeleria requerida </p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">';
-                    $objetivoSitio = json_decode($_POST['objetivoSitio']); foreach($objetivoSitio as $objetivo){
-                        $mensaje .= '<p>' . $objetivo . '</p>';
+                    $papeleriaNecesitada = json_decode($_POST['papeleriaNecesitada']); foreach($papeleriaNecesitada as $papeleria){
+                        $mensaje .= '<p>' . $papeleria . '</p>';
                     }
                 $mensaje .= '</div>
             </div>
             <div class="datosCampo flex flex-col md:flex-row">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>¿Qué secciones y funciones debe cubrir la página web?</p>
+                    <p>Aplicaciones deseadas </p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">';
-                    $checkFunciones = json_decode($_POST['checkFunciones']); foreach($checkFunciones as $funcion){
-                        $mensaje .= '<p>'. $funcion .'</p>';
+                    $aplicacionesNecesitadas = json_decode($_POST['aplicacionesNecesitadas']); foreach($aplicacionesNecesitadas as $app){
+                        $mensaje .= '<p>' . $app . '</p>';
                     }
                 $mensaje .= '</div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>¿Cuenta con logotipo en archivo vectorial o editable?</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['logotipoEmpresa'] .'</p>
-                </div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>¿Existe un manual de estilo, esquema de colores, tipografía, o alguna regla?</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['conReglasEstilos'] .'</p>
-                </div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Colores, tipografía o regla que le gustaría se respetara:</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['reglasEstilos'] .'</p>
-                </div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Webs de referencia:</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['webReferencia'] .'</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="seccion w-screen">
-            <div class="tituloPaso p-2 bg-invirtual-300 text-white font-semibold text-xl">
-                <h3>Redes Sociales</h3>
-            </div>';
-            
-                $redes = [];
-                $redesPrev = json_decode($_POST['redes']);
-                for($i = 0 ; $i < count($redesPrev) ; $i += 2) {
-                    $redes[$redesPrev[$i]] = $redesPrev[$i + 1];
-                }
-
-                foreach ($redes as $key => $value) {
-                $mensaje .= '<div class="datosCampo flex flex-col md:flex-row ">
-                    <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                        <p>'. $key .'</p>
-                    </div>
-                    <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                        <p>'. $value .'</p>
-                    </div>
-                </div>';
-                }
-
-        $mensaje .= '</div>
-
-        <div class="seccion w-screen">
-            <div class="tituloPaso p-2 bg-invirtual-300 text-white font-semibold text-xl">
-                <h3>Estructura de la Página</h3>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row ">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Estructura</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['checkEstructura'] .'</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="seccion w-screen">
-            <div class="tituloPaso p-2 bg-invirtual-300 text-white font-semibold text-xl">
-                <h3>Datos Extra</h3>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row ">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Cuentas de correo:</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['cuentasEmpresa'] .'</p>
-                </div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row ">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Describe tu empresa en 3 renglones:</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['desTresRenglones'] .'</p>
-                </div>
-            </div>
-            <div class="datosCampo flex flex-col md:flex-row ">
-                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Palabras clave:</p>
-                </div>
-                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['palabrasClave'] .'</p>
-                </div>
             </div>
         </div>
     </main>
@@ -469,4 +462,5 @@ if(mail($para, $titulo, $mensaje, $cabeceras)){
 }else{
     echo('false');
 }
+
 ?>
