@@ -129,10 +129,11 @@ btnEnviarBrief.addEventListener('click',(e)=>{
     datos.append('correoEmpresa',correoEmpresa.value);
     datos.append('telefonoEmpresa',telefonoEmpresa.value);
     datos.append('direccionEmpresa',direccionEmpresa.value);
+    datos.append('coloniaEmpresa',coloniaEmpresa.value);
     datos.append('municipioEmpresa',municipioEmpresa.value);
-    datos.append('ciudadEmpresa',ciudadEmpresa.value);
     datos.append('estadoEmpresa',estadoEmpresa.value);
     datos.append('cpostalEmpresa',cpostalEmpresa.value);
+    datos.append('paisEmpresa',paisEmpresa.value);
     
     /* Info Logotipo */
     datos.append('historiaEmpresa',historiaEmpresa.value);
@@ -254,7 +255,7 @@ const validarPasoDos = () => {
 }
 
 const validarPasoTres = () => {
-  if (validarCampoTexto('direccionEmpresa') && validarCampoTexto('municipioEmpresa') && validarCampoTexto('ciudadEmpresa') && validarCampoTexto('estadoEmpresa') && validarCampoTexto('cpostalEmpresa')){
+  if (validarCampoTexto('direccionEmpresa') && validarCampoTexto('coloniaEmpresa') && validarCampoTexto('municipioEmpresa') && validarCampoTexto('estadoEmpresa') && validarCampoTexto('cpostalEmpresa') && validarCampoTexto('paisEmpresa')){
     return true;
   }else{
     return false;

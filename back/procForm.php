@@ -259,18 +259,18 @@ $mensaje .= '<body class="font-InvFont bg-gray-200 w-screen h-screen">
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Alcaldía / Municipio: </p>
+                    <p>Colonia: </p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['municipioEmpresa'] .'</p>
+                    <p>'. $_POST['coloniaEmpresa'] .'</p>
                 </div>
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
                 <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
-                    <p>Ciudad: </p>
+                    <p>Municipio / Alcaldía: </p>
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
-                    <p>'. $_POST['ciudadEmpresa'] .'</p>
+                    <p>'. $_POST['municipioEmpresa'] .'</p>
                 </div>
             </div>
             <div class="datosCampo flex flex-col md:flex-row ">
@@ -287,6 +287,14 @@ $mensaje .= '<body class="font-InvFont bg-gray-200 w-screen h-screen">
                 </div>
                 <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
                     <p>'. $_POST['cpostalEmpresa'] .'</p>
+                </div>
+            </div>
+            <div class="datosCampo flex flex-col md:flex-row ">
+                <div class="col w-full md:w-1/2 p-2 font-semibold border-1 border-invirtual-300">
+                    <p>País: </p>
+                </div>
+                <div class="col w-full md:w-1/2 p-2 border-1 border-invirtual-300">
+                    <p>'. $_POST['paisEmpresa'] .'</p>
                 </div>
             </div>
         </div>
