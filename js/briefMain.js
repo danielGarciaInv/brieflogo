@@ -1,4 +1,4 @@
-const url = "http://localhost/brieflogo/";
+const url = "https://invirtual.mx/brieflogo/";
 
 const movPag = document.getElementById("movPag");
 const btnSig = document.querySelectorAll(".btnSig");
@@ -116,54 +116,55 @@ for (const btn of btnAnt) {
 btnEnviarBrief.addEventListener('click',(e)=>{
   e.preventDefault();
   if(validarPasoNueve()){
-    let datos = new FormData();
-    // ---------------------------- Recolección de datos para enviarlos
+    let data = new FormData();
+    let datos = {};
+    // ---------------------------- Recolecci贸n de datos para enviarlos
     /* Datos de contacto */
-    datos.append('nombreCliente',nombreCliente.value);
-    datos.append('correoCliente',correoCliente.value);
-    datos.append('telefonoCliente',telefonoCliente.value);
+    datos.nombreCliente = nombreCliente.value;
+    datos.correoCliente = correoCliente.value;
+    datos.telefonoCliente = telefonoCliente.value;
   
     /* Datos de empresa */
-    datos.append('nombreEmpresa',nombreEmpresa.value);
-    datos.append('razonEmpresa',razonEmpresa.value);
-    datos.append('correoEmpresa',correoEmpresa.value);
-    datos.append('telefonoEmpresa',telefonoEmpresa.value);
-    datos.append('direccionEmpresa',direccionEmpresa.value);
-    datos.append('coloniaEmpresa',coloniaEmpresa.value);
-    datos.append('municipioEmpresa',municipioEmpresa.value);
-    datos.append('estadoEmpresa',estadoEmpresa.value);
-    datos.append('cpostalEmpresa',cpostalEmpresa.value);
-    datos.append('paisEmpresa',paisEmpresa.value);
+    datos.nombreEmpresa = nombreEmpresa.value;
+    datos.razonEmpresa = razonEmpresa.value;
+    datos.correoEmpresa = correoEmpresa.value;
+    datos.telefonoEmpresa = telefonoEmpresa.value;
+    datos.direccionEmpresa =direccionEmpresa.value;
+    datos.coloniaEmpresa = coloniaEmpresa.value;
+    datos.municipioEmpresa = municipioEmpresa.value;
+    datos.estadoEmpresa = estadoEmpresa.value;
+    datos.cpostalEmpresa = cpostalEmpresa.value;
+    datos.paisEmpresa = paisEmpresa.value;
     
     /* Info Logotipo */
-    datos.append('historiaEmpresa',historiaEmpresa.value);
-    datos.append('significadoNombre',significadoNombre.value);
-    datos.append('actividadEmpresa',actividadEmpresa.value);
-    datos.append('diferenciadorEmpresa',diferenciadorEmpresa.value);
-    datos.append('competidoresEmpresa',competidoresEmpresa.value);
-    datos.append('objetivoEmpresa',objetivoEmpresa.value);
-    datos.append('mercadoMeta',mercadoMeta.value);
+    datos.historiaEmpresa = historiaEmpresa.value;
+    datos.significadoNombre = significadoNombre.value;
+    datos.actividadEmpresa = actividadEmpresa.value;
+    datos.diferenciadorEmpresa = diferenciadorEmpresa.value;
+    datos.competidoresEmpresa = competidoresEmpresa.value;
+    datos.objetivoEmpresa = objetivoEmpresa.value;
+    datos.mercadoMeta = mercadoMeta.value;
 
     checksTipoLogo = document.getElementsByName('checkTipoLogo');
     for (let checkTipoLogo of checksTipoLogo){
       if(checkTipoLogo.checked){
-        datos.append('checkTipoLogo',checkTipoLogo.value);
+        datos.checkTipoLogo = checkTipoLogo.value;
       }
     }
 
-    datos.append('ideaLogotipo',ideaLogotipo.value);
-    datos.append('coloresLogotipo',coloresLogotipo.value);
-    datos.append('mensajeLogotipo',mensajeLogotipo.value);
-    datos.append('conSlogan',conSlogan.value);
-    datos.append('ideaSlogan',ideaSlogan.value);
-    datos.append('evitarDiseno',evitarDiseno.value);
-    datos.append('evitarColores',evitarColores.value);
+    datos.ideaLogotipo = ideaLogotipo.value;
+    datos.coloresLogotipo = coloresLogotipo.value;
+    datos.mensajeLogotipo = mensajeLogotipo.value;
+    datos.conSlogan = conSlogan.value;
+    datos.ideaSlogan = ideaSlogan.value;
+    datos.evitarDiseno = evitarDiseno.value;
+    datos.evitarColores = evitarColores.value;
 
     /* Papeleria */
     checksManual = document.getElementsByName('checkManual');
     for (let checkManual of checksManual){
       if(checkManual.checked){
-        datos.append('checkManual',checkManual.value);
+        datos.checkManual = checkManual.value;
       }
     }
 
@@ -174,8 +175,8 @@ btnEnviarBrief.addEventListener('click',(e)=>{
         papeleriaNecesitada.push(papeleria.value);
       }
     }
-    papeleriaNecesitada = JSON.stringify(papeleriaNecesitada);
-    datos.append('papeleriaNecesitada',papeleriaNecesitada);
+    //papeleriaNecesitada = JSON.stringify(papeleriaNecesitada);
+    datos.papeleriaNecesitada = papeleriaNecesitada;
 
     let appsNecesitadas = document.getElementsByName('aplicacionesNecesitadas');
     let aplicacionesNecesitadas = [];
@@ -184,12 +185,15 @@ btnEnviarBrief.addEventListener('click',(e)=>{
         aplicacionesNecesitadas.push(aplicacion.value);
       }
     }
-    aplicacionesNecesitadas = JSON.stringify(aplicacionesNecesitadas);
-    datos.append('aplicacionesNecesitadas',aplicacionesNecesitadas);
+    //aplicacionesNecesitadas = JSON.stringify(aplicacionesNecesitadas);
+    datos.aplicacionesNecesitadas = aplicacionesNecesitadas;
   
+    // Hacer append del objeto datos (SOLO PARA EL ENVIO POR CORREO)
+    data.append('datos',JSON.stringify(datos));
+    
     fetch(url+'back/procForm.php',{
       method: 'POST',
-      body: datos
+      body: data
     }).then(res => res.text()).then((r) => {
       if(r == 'true'){
         mostrarModal('Se ha enviado el brief correctamente!', '#2ca02c');
