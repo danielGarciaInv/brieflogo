@@ -191,7 +191,29 @@ btnEnviarBrief.addEventListener('click',(e)=>{
     // Hacer append del objeto datos (SOLO PARA EL ENVIO POR CORREO)
     data.append('datos',JSON.stringify(datos));
     
-    fetch(url+'back/procForm.php',{
+    // --------------------- Fetch a la API
+    
+    fetch('https://centralinvirzo.xyz/app/api/v1/briefs/web',{
+      method: "POST",
+      body: JSON.stringify(datos),
+    headers: {
+        Accept: "applicaton/json",
+        'Content-type': 'application/json; charset=UTF-8'
+    }
+    }).then((res) => {
+        return res.text();
+    }).then((r) => {
+      if(r == 'true'){
+        enviarCorreo(data);
+        mostrarModal('Se ha enviado el brief correctamente!', '#2ca02c');
+      }else{
+        mostrarModal('Ha ocurrido un error, favor de intentarlo mas tarde!', '#c83737');
+      }
+    });
+    
+    // --------------------- Fetch para enviar Correos
+
+    /* fetch(url+'back/procForm.php',{
       method: 'POST',
       body: data
     }).then(res => res.text()).then((r) => {
@@ -200,7 +222,7 @@ btnEnviarBrief.addEventListener('click',(e)=>{
       }else{
         mostrarModal('Ha ocurrido un error, favor de intentarlo mas tarde!', '#c83737');
       }
-    });
+    }); */
   }
 });
 
@@ -208,6 +230,15 @@ btnCerrarModal.addEventListener('click',(e)=>{
   e.preventDefault();
   window.location.reload();
 });
+
+// ------------------------------------------------------------------- Función para notificar por correo
+const enviarCorreo = (data) => {
+  fetch(url+'back/correoNotificar.php',{
+    method: 'POST',
+    body: data
+  }).then(res => res.text()).then(r => r);
+}
+
 // ------------------------------------------------------------------- Funciones para el Desplazamiento
 
 const desplazarDerecha = () => {
