@@ -120,51 +120,51 @@ btnEnviarBrief.addEventListener('click',(e)=>{
     let datos = {};
     // ---------------------------- Recolecci贸n de datos para enviarlos
     /* Datos de contacto */
-    datos.nombreCliente = nombreCliente.value;
-    datos.correoCliente = correoCliente.value;
-    datos.telefonoCliente = telefonoCliente.value;
+    datos.clientName = nombreCliente.value;
+    datos.clientEmail = correoCliente.value;
+    datos.clientPhone = telefonoCliente.value;
   
     /* Datos de empresa */
-    datos.nombreEmpresa = nombreEmpresa.value;
-    datos.razonEmpresa = razonEmpresa.value;
-    datos.correoEmpresa = correoEmpresa.value;
-    datos.telefonoEmpresa = telefonoEmpresa.value;
-    datos.direccionEmpresa =direccionEmpresa.value;
-    datos.coloniaEmpresa = coloniaEmpresa.value;
-    datos.municipioEmpresa = municipioEmpresa.value;
-    datos.estadoEmpresa = estadoEmpresa.value;
-    datos.cpostalEmpresa = cpostalEmpresa.value;
-    datos.paisEmpresa = paisEmpresa.value;
+    datos.businessName = nombreEmpresa.value;
+    datos.businessReason = razonEmpresa.value;
+    datos.businessEmail = correoEmpresa.value;
+    datos.businessPhone = telefonoEmpresa.value;
+    datos.businessAddress =direccionEmpresa.value;
+    datos.businessSuburb = coloniaEmpresa.value;
+    datos.businessMunicipality = municipioEmpresa.value;
+    datos.businessState = estadoEmpresa.value;
+    datos.businessPostalCode = cpostalEmpresa.value;
+    datos.businessCountry = paisEmpresa.value;
     
     /* Info Logotipo */
-    datos.historiaEmpresa = historiaEmpresa.value;
-    datos.significadoNombre = significadoNombre.value;
-    datos.actividadEmpresa = actividadEmpresa.value;
-    datos.diferenciadorEmpresa = diferenciadorEmpresa.value;
-    datos.competidoresEmpresa = competidoresEmpresa.value;
-    datos.objetivoEmpresa = objetivoEmpresa.value;
-    datos.mercadoMeta = mercadoMeta.value;
+    datos.businessHistory = historiaEmpresa.value;
+    datos.nameMeaning = significadoNombre.value;
+    datos.businessActivity = actividadEmpresa.value;
+    datos.businessDifferentiator = diferenciadorEmpresa.value;
+    datos.businessCompetitors = competidoresEmpresa.value;
+    datos.businessGoal = objetivoEmpresa.value;
+    datos.targetMarket = mercadoMeta.value;
 
     checksTipoLogo = document.getElementsByName('checkTipoLogo');
     for (let checkTipoLogo of checksTipoLogo){
       if(checkTipoLogo.checked){
-        datos.checkTipoLogo = checkTipoLogo.value;
+        datos.checkLogoType = checkTipoLogo.value;
       }
     }
 
-    datos.ideaLogotipo = ideaLogotipo.value;
-    datos.coloresLogotipo = coloresLogotipo.value;
-    datos.mensajeLogotipo = mensajeLogotipo.value;
-    datos.conSlogan = conSlogan.value;
-    datos.ideaSlogan = ideaSlogan.value;
-    datos.evitarDiseno = evitarDiseno.value;
-    datos.evitarColores = evitarColores.value;
+    datos.logoIdea = ideaLogotipo.value;
+    datos.logoColor = coloresLogotipo.value;
+    datos.logoMessage = mensajeLogotipo.value;
+    datos.withSlogan = conSlogan.value;
+    datos.sloganIdea = ideaSlogan.value;
+    datos.avoidDesign = evitarDiseno.value;
+    datos.avoidColors = evitarColores.value;
 
     /* Papeleria */
     checksManual = document.getElementsByName('checkManual');
     for (let checkManual of checksManual){
       if(checkManual.checked){
-        datos.checkManual = checkManual.value;
+        datos.manualCheck = checkManual.value;
       }
     }
 
@@ -176,7 +176,7 @@ btnEnviarBrief.addEventListener('click',(e)=>{
       }
     }
     //papeleriaNecesitada = JSON.stringify(papeleriaNecesitada);
-    datos.papeleriaNecesitada = papeleriaNecesitada;
+    datos.stationeryNeeded = papeleriaNecesitada;
 
     let appsNecesitadas = document.getElementsByName('aplicacionesNecesitadas');
     let aplicacionesNecesitadas = [];
@@ -186,14 +186,14 @@ btnEnviarBrief.addEventListener('click',(e)=>{
       }
     }
     //aplicacionesNecesitadas = JSON.stringify(aplicacionesNecesitadas);
-    datos.aplicacionesNecesitadas = aplicacionesNecesitadas;
+    datos.applicationsNeeded = aplicacionesNecesitadas;
   
     // Hacer append del objeto datos (SOLO PARA EL ENVIO POR CORREO)
     data.append('datos',JSON.stringify(datos));
     
     // --------------------- Fetch a la API
     
-    fetch('https://centralinvirzo.xyz/app/api/v1/briefs/web',{
+    fetch('https://centralinvirzo.xyz/app/api/v1/briefs/logo',{
       method: "POST",
       body: JSON.stringify(datos),
     headers: {
